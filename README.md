@@ -110,6 +110,39 @@ aksi.get(pilihan, lambda: print("Pilihan tidak valid"))()
 ```
 saya tambahkan 'pass' disana agar dia mengecek apakah file 'data.txt' itu sudah dibuat atau belum.
 
+## Latihan 3 - Nama Unik/Unique Name/Daftar Nama itulah pokoknya
+```python
+import os
+
+def simpan_nama_unik():
+    nama_file = "data.txt"
+    
+    while True:
+        nama_input = input("masukkan nama: ").strip()
+        
+        daftar_nama = []
+        if os.path.exists(nama_file):
+            with open(nama_file, "r") as f:
+                daftar_nama = [line.strip() for line in f.readlines()]
+        
+        if nama_input in daftar_nama:
+            print("nama sudah ada pada daftar")
+        else:
+            with open(nama_file, "a") as f:
+                f.write(nama_input + "\n")
+            print(f"Berhasil menambahkan {nama_input}")
+
+        ulangi = input("ulangi masukkan nama (y/t)?").lower()
+        if ulangi == 't':
+            break
+
+if __name__ == "__main__":
+    simpan_nama_unik()
+```
+ini sama saja seperti yang tadi waktu kita input nama di awal dan di save ke 'data.txt' tapi bedanya disini kita tanyakan ulang ke user apakah ingin menambahkan nama lagi dan jika 'true' dia dapat menambahkan nama, apabila nama yang di masukkan sama persis 'capital case' nya juga sistem akan merespon bahwa nama tersebut telah ada di file 'data.txt'. Ini sebenernya logikanya mudah saja, dimana kita hanya perlu read kembali data yang ada sebelum ke write jadi di fungsi if disana kita loop kesana, agar sistem mendeteksii terlebih dahulu apakah nama itu sudah ada di 'data.txt' atau belum.
+
+## Latihan 4 - memfasilitasi user untuk membuat file txt baru pada working directory. 
+
 
 
 
