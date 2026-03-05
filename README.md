@@ -1,6 +1,6 @@
 # M2_Programming2_FileHandling
 
-Latihan 1 - Silahkan buat program yang berisi menu untuk membaca dan menuliskan text ke dalam suatu file txt.
+**Latihan 1 - Silahkan buat program yang berisi menu untuk membaca dan menuliskan text ke dalam suatu file txt.**
 ```python
 import os
 
@@ -52,6 +52,10 @@ Satu lagi, saya menggunakan:
 aksi.get(pilihan, lambda: print("Pilihan tidak valid"))()
 ```
 untuk menggantikan fungsi if atau elif karena saya mumet bu kalau pakai itu, apalagi kalau bertumpuk, jadi saya akalin menggunakan fungsi 'def' saya agar jelas maksud dan terorganisir disana.
+
+**Output:**
+<img width="1491" height="438" alt="image" src="https://github.com/user-attachments/assets/5b8bc3c3-8564-4ca7-9835-de9a01e53d39" />
+
 
 
 
