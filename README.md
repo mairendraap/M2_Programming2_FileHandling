@@ -56,6 +56,60 @@ untuk menggantikan fungsi if atau elif karena saya mumet bu kalau pakai itu, apa
 **Output:**
 <img width="1491" height="438" alt="image" src="https://github.com/user-attachments/assets/5b8bc3c3-8564-4ca7-9835-de9a01e53d39" />
 
+Latihan 2 - Menambahkan Context Manager
+Jujur sama saja dengan kode saya sebelumnya bu, cuman saya mengganti sedikit di bagian yang awalnya:
+```python
+nama_file = "data.txt"
+f_awal = open(nama_file, "a")
+f_awal.close()
+```
+Menjadi:
+```python
+with open(nama_file, "a") as f:
+```
+Cuman itu aja, karena sebelumnya memang saya membuat fungsi serupa tapi kalau di context manager ini kan dibuat lebih simple kita tidak perlu pakai syntax open atau close lagi, dan lebih hemat memori.
+
+Ini kode full nya:
+```python
+import os
+
+nama_file = "data.txt"
+with open(nama_file, "a") as f:
+    pass 
+
+def menu_tulis():
+    teks = input("Masukkan inputan:")
+    f = open(nama_file, "w")
+    f.write(teks)
+    f.close()
+    print("Data sudah diinput")
+
+def menu_baca():
+    f = open(nama_file, "r")
+    print("\nIsi data.txt:")
+    print(f.read())
+    f.close()
+
+def menu_lihat_daftar():
+    print("\nDaftar file di direktori:", os.listdir())
+
+print(f"File Handling ({nama_file})")
+print("1. Tulis ke data.txt")
+print("2. Baca data.txt")
+print("3. Lihat Daftar File")
+
+pilihan = input("Pilih menu (1/2/3): ")
+
+aksi = {
+    "1": menu_tulis,
+    "2": menu_baca,
+    "3": menu_lihat_daftar
+}
+
+aksi.get(pilihan, lambda: print("Pilihan tidak valid"))()
+```
+saya tambahkan 'pass' disana agar dia mengecek apakah file 'data.txt' itu sudah dibuat atau belum.
+
 
 
 
