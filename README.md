@@ -39,7 +39,7 @@ aksi = {
 
 aksi.get(pilihan, lambda: print("Pilihan tidak valid"))()
 ```
-Kenapa disini saya menggunakan fungsi def yang rumit karena file yang saya tuju itu langsung ke data.txt bu, file sudah saya sediakan sebelumnya tanpa membuat program eksternal untuk create file baru untuk kita, cuman minusnya adalah kita tidak dapat menambahkan atau seleksi file langsung melalui program yang dijalankan, harus manual membuat file dan memanggilnya di program, ini adalah kode penting untuk mengakses file itu:
+Kenapa disini saya menggunakan fungsi def yang sangat simple ini karena file yang saya tuju itu langsung ke data.txt bu, file sudah saya sediakan sebelumnya tanpa membuat program eksternal untuk create file baru untuk kita, cuman minusnya adalah kita tidak dapat menambahkan atau seleksi file langsung melalui program yang dijalankan, harus manual membuat file dan memanggilnya di program, ini adalah kode penting untuk mengakses file itu (saya malas bertemu if atau elif apalagi kalau bertumpuk itu mumet bu:
 ```python
 nama_file = "data.txt"
 f_awal = open(nama_file, "a")
