@@ -144,6 +144,38 @@ if __name__ == "__main__":
 ini sama saja seperti yang tadi waktu kita input nama di awal dan di save ke 'data.txt' tapi bedanya disini kita tanyakan ulang ke user apakah ingin menambahkan nama lagi dan jika 'true' dia dapat menambahkan nama, apabila nama yang di masukkan sama persis 'capital case' nya juga sistem akan merespon bahwa nama tersebut telah ada di file 'data.txt'. Ini sebenernya logikanya mudah saja, dimana kita hanya perlu read kembali data yang ada sebelum ke write jadi di fungsi if disana kita loop kesana, agar sistem mendeteksii terlebih dahulu apakah nama itu sudah ada di 'data.txt' atau belum.
 
 ## Latihan 4 - memfasilitasi user untuk membuat file txt baru pada working directory. 
+```python
+import os
+
+def buat_file_baru():
+    while True:
+        nama_file = input("masukkan nama file: ")
+        if not nama_file.endswith(".txt"):
+            nama_file += ".txt"
+            
+        files_in_dir = os.listdir()
+        
+        if nama_file in files_in_dir:
+            print("file sudah ada pada direktori tersebut")
+            ulangi = input("ulangi membuat file baru (y/t)?").lower()
+            if ulangi == 't':
+                break
+        else:
+            with open(nama_file, "w") as f:
+                pass 
+            print(f"{nama_file} berhasil dibuat")
+            ulangi = input("ulangi membuat file baru (y/t)?").lower()
+            if ulangi == 't':
+                break
+
+
+if __name__ == "__main__":
+    buat_file_baru()
+```
+<img width="1288" height="178" alt="image" src="https://github.com/user-attachments/assets/7fb3a672-5508-425b-8d77-1f7cb7fb9fb1" />
+Fungsi ini sangat mirip dengan sebelumnya, namun ini kita merubah sebuah file. Saya mau jelasin satu satu untuk yang awal itu pastinya cek dulu apakah ada file dengan nama tersebut output terminal saya check terlebih dahulu dengan input 'data.txt' yang sebelumnya memang sudah ada di directory, disini saya sengaja membuat opsi menjadi lower agar orang membaca dengan teliti, jadi nanti kalau ada yang input menggunakan Y capital tidak akan merespon karena saya set ke lower saja. Dan setelahnya saya coba menggunakan ekstensi '.txt' karena di program saya sudah input filename end with '.txt', ternyata program paham kalau itu sebuah ekstensi file, dan selanjutnya dataherdan saja dan auto ada ekstensi '.txt'.
+
+Sekain praktikum saya, terima kasih.
 
 
 
