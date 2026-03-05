@@ -139,6 +139,8 @@ def simpan_nama_unik():
 if __name__ == "__main__":
     simpan_nama_unik()
 ```
+<img width="1288" height="128" alt="image" src="https://github.com/user-attachments/assets/a5d8448b-ff85-4294-9aaa-db7b16821ca2" />
+
 ini sama saja seperti yang tadi waktu kita input nama di awal dan di save ke 'data.txt' tapi bedanya disini kita tanyakan ulang ke user apakah ingin menambahkan nama lagi dan jika 'true' dia dapat menambahkan nama, apabila nama yang di masukkan sama persis 'capital case' nya juga sistem akan merespon bahwa nama tersebut telah ada di file 'data.txt'. Ini sebenernya logikanya mudah saja, dimana kita hanya perlu read kembali data yang ada sebelum ke write jadi di fungsi if disana kita loop kesana, agar sistem mendeteksii terlebih dahulu apakah nama itu sudah ada di 'data.txt' atau belum.
 
 ## Latihan 4 - memfasilitasi user untuk membuat file txt baru pada working directory. 
